@@ -1,0 +1,81 @@
+@import "../../MediaQueries/breakpoint.scss";
+
+@mixin title($size, $weight, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    margin: 8px 0;
+    color: $color;
+}
+
+@mixin card {
+    .card {
+        border-right: 1px solid gray;
+        border-left: 1px solid gray;
+        border-bottom: 1px solid gray;
+        border-radius: 10px;
+
+        padding: 30px;
+        margin: 20px 0;
+        width: 344px;
+
+        .cardTitle {
+            font-size: 26px;
+            color: black;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .cardContent {
+            font-size: 16px;
+            color: gray;
+            font-weight: 200;
+            margin: 10px 0;
+        }
+
+        div {
+            margin-top: 45px;
+            display: flex;
+            justify-content: right;
+        }
+    }
+}
+
+.header {
+    margin: 40px 35%;
+    width: 30%;
+    text-align: center;
+
+    .title_1 {
+        @include title(32px, 200, gray)
+    }
+
+    .title_2 {
+        @include title(36px, 400, black)
+    }
+}
+
+.cardLayout {
+
+    @include md {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @include xl {
+        display: flex;
+        flex-direction: row;
+        column-gap: 20px;
+        align-items: center;
+
+        margin: 0 15%;
+        width: 70%;
+    }
+
+
+    div {
+        @include card;
+    }
+
+    @include card;
+}
